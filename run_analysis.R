@@ -37,7 +37,8 @@ filteredData <- testAndTrainRows[,meanStdCols]
 
 #Second Data set
 #1- calculate mean for each activity by participant
-meanData <- aggregate(testAndTrainRows, by=list(testAndTrainRows$subject), FUN=mean)
+meanData <- aggregate(filteredData, by=list(testAndTrainRows$subject), FUN=mean)
+names(meanData)[1] <- "subjectID"
 
 #Remove temp variables
 remove(activityLabels, featureLables, test, testActivity, testSubject, train, trainActivity, trainSubject)
