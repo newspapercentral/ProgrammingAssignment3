@@ -42,9 +42,6 @@ meanData <- aggregate(testAndTrainRows, by=list(testAndTrainRows$subject), FUN=m
 #Remove temp variables
 remove(activityLabels, featureLables, test, testActivity, testSubject, train, trainActivity, trainSubject)
 
-#Code book
-#1- provide documentation for each of data sets
-
-#README.md
-#1- make a README file describing the script and how to use it
+#Write out data
+write.table(meanData, file="meanFeatureBySubject.txt", row.names = FALSE)
 
